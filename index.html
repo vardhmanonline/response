@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajasthani Ras — Snack Preference Survey</title>
+<style>
+  :root {
+    --maroon: #7a1f1f;
+    --gold: #c9861a;
+    --cream: #fdf3e2;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--cream);
+    margin: 0;
+    padding: 24px 16px 60px;
+    color: #3a2a1a;
+  }
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    background: #fff;
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    padding: 32px 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  .logo {
+    display: block;
+    max-width: 220px;
+    margin: 0 auto 16px;
+  }
+  h1 {
+    text-align: center;
+    color: var(--maroon);
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+  }
+  p.subtitle {
+    text-align: center;
+    color: #7a6a55;
+    margin-top: 0;
+    margin-bottom: 28px;
+    font-size: 0.95rem;
+  }
+  fieldset {
+    border: none;
+    border-top: 1px solid #eadfc9;
+    padding: 18px 0;
+    margin: 0;
+  }
+  legend {
+    font-weight: bold;
+    color: var(--maroon);
+    padding: 0;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  label.option {
+    display: block;
+    background: var(--cream);
+    border: 1px solid #eadfc9;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+  }
+  label.option:hover { border-color: var(--gold); }
+  input[type="radio"], input[type="checkbox"] { margin-right: 8px; }
+  textarea, input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #eadfc9;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: var(--cream);
+  }
+  textarea { min-height: 80px; resize: vertical; }
+  button {
+    display: block;
+    width: 100%;
+    background: var(--maroon);
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    cursor: pointer;
+    margin-top: 24px;
+  }
+  button:hover { background: #611818; }
+  button:disabled { background: #aaa; cursor: not-allowed; }
+  #status {
+    text-align: center;
+    margin-top: 16px;
+    font-weight: bold;
+  }
+  #thankyou {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  #thankyou h2 { color: var(--maroon); }
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="/logo.png" alt="Rajasthani Ras" class="logo">
+  <h1>Snack Preference Survey</h1>
+  <p class="subtitle">Help us decide what to launch next — takes 2 minutes.</p>
+
+  <form id="surveyForm">
+
+    <fieldset>
+      <legend>1. How often do you buy traditional Indian snacks?</legend>
+      <label class="option"><input type="radio" name="q1" value="Daily" required> Daily</label>
+      <label class="option"><input type="radio" name="q1" value="A few times a week"> A few times a week</label>
+      <label class="option"><input type="radio" name="q1" value="A few times a month"> A few times a month</label>
+      <label class="option"><input type="radio" name="q1" value="Rarely"> Rarely</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Which of our current snacks have you tried or would want to try? (select all)</legend>
+      <label class="option"><input type="checkbox" name="q2" value="Khatta Khudi"> Khatta Khudi</label>
+      <label class="option"><input type="checkbox" name="q2" value="Papad"> Papad</label>
+      <label class="option"><input type="checkbox" name="q2" value="Khajur Mendhri"> Khajur Mendhri</label>
+      <label class="option"><input type="checkbox" name="q2" value="Gatte"> Gatte</label>
+      <label class="option"><input type="checkbox" name="q2" value="Kameri"> Kameri</label>
+      <label class="option"><input type="checkbox" name="q2" value="Moong Dal Badi"> Moong Dal Badi</label>
+      <label class="option"><input type="checkbox" name="q2" value="Masala Papad"> Masala Papad</label>
+      <label class="option"><input type="checkbox" name="q2" value="Namkeen"> Namkeen</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. From our upcoming range, which are you most excited about? (pick up to 3)</legend>
+      <label class="option"><input type="checkbox" name="q3" value="Ghughra"> Ghughra</label>
+      <label class="option"><input type="checkbox" name="q3" value="Mathri"> Mathri</label>
+      <label class="option"><input type="checkbox" name="q3" value="Mini Bada"> Mini Bada</label>
+      <label class="option"><input type="checkbox" name="q3" value="Sampare"> Sampare</label>
+      <label class="option"><input type="checkbox" name="q3" value="Fer"> Fer</label>
+      <label class="option"><input type="checkbox" name="q3" value="Dal Badi Sukha"> Dal Badi Sukha</label>
+      <label class="option"><input type="checkbox" name="q3" value="Bhitadi"> Bhitadi</label>
+      <label class="option"><input type="checkbox" name="q3" value="Mewa Batadi"> Mewa Batadi</label>
+      <label class="option"><input type="checkbox" name="q3" value="Udadiya Batadi"> Udadiya Batadi</label>
+      <label class="option"><input type="checkbox" name="q3" value="Besan ki Sev"> Besan ki Sev</label>
+      <label class="option"><input type="checkbox" name="q3" value="Mota Chana"> Mota Chana</label>
+      <label class="option"><input type="checkbox" name="q3" value="Chur/Chakli"> Chur/Chakli</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Which regional snack style do you enjoy most, or want us to expand into?</legend>
+      <label class="option"><input type="radio" name="q4" value="Rajasthani (current focus)" required> Rajasthani (current focus)</label>
+      <label class="option"><input type="radio" name="q4" value="Gujarati (dhokla, khakhra, fafda)"> Gujarati (dhokla, khakhra, fafda)</label>
+      <label class="option"><input type="radio" name="q4" value="Indori (poha-sev)"> Indori (poha-sev)</label>
+      <label class="option"><input type="radio" name="q4" value="Ratlami (sev, namkeen)"> Ratlami (sev, namkeen)</label>
+      <label class="option"><input type="radio" name="q4" value="Not sure yet"> Not sure yet</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>5. We're launching a no-palm-oil line alongside our regular snacks. How important is that to you?</legend>
+      <label class="option"><input type="radio" name="q5" value="Very important" required> Very important</label>
+      <label class="option"><input type="radio" name="q5" value="Somewhat important"> Somewhat important</label>
+      <label class="option"><input type="radio" name="q5" value="Not important"> Not important</label>
+      <label class="option"><input type="radio" name="q5" value="Wasn't aware palm oil was an issue"> Wasn't aware palm oil was an issue</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>6. Would you pay slightly more for a no-palm-oil version of your favorite snack?</legend>
+      <label class="option"><input type="radio" name="q6" value="Yes, happily" required> Yes, happily</label>
+      <label class="option"><input type="radio" name="q6" value="Yes, a little more"> Yes, a little more</label>
+      <label class="option"><input type="radio" name="q6" value="No, price matters most"> No, price matters most</label>
+      <label class="option"><input type="radio" name="q6" value="Not sure"> Not sure</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>7. What matters most when choosing a snack brand? (pick up to 3)</legend>
+      <label class="option"><input type="checkbox" name="q7" value="Authentic regional taste"> Authentic regional taste</label>
+      <label class="option"><input type="checkbox" name="q7" value="Healthier ingredients"> Healthier ingredients</label>
+      <label class="option"><input type="checkbox" name="q7" value="Freshness"> Freshness</label>
+      <label class="option"><input type="checkbox" name="q7" value="Packaging & shelf life"> Packaging & shelf life</label>
+      <label class="option"><input type="checkbox" name="q7" value="Price"> Price</label>
+      <label class="option"><input type="checkbox" name="q7" value="Brand story"> Brand story</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>8. How would you prefer to buy Rajasthani Ras snacks?</legend>
+      <label class="option"><input type="radio" name="q8" value="Website (D2C)" required> Website (D2C)</label>
+      <label class="option"><input type="radio" name="q8" value="Amazon/Flipkart"> Amazon/Flipkart</label>
+      <label class="option"><input type="radio" name="q8" value="Local store"> Local store</label>
+      <label class="option"><input type="radio" name="q8" value="Not sure yet"> Not sure yet</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>9. Anything specific — a flavor, dish, or regional snack — you wish we'd make?</legend>
+      <textarea name="q9" placeholder="Optional"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>10. Name & phone/email (optional — for early access & launch updates)</legend>
+      <input type="text" name="name" placeholder="Name (optional)" style="margin-bottom:8px;">
+      <input type="text" name="contact" placeholder="Phone or Email (optional)">
+    </fieldset>
+
+    <button type="submit" id="submitBtn">Submit Response</button>
+    <div id="status"></div>
+  </form>
+
+  <div id="thankyou">
+    <h2>धन्यवाद! 🙏</h2>
+    <p>Your response has been recorded. Thank you for helping shape Rajasthani Ras!</p>
+  </div>
+</div>
+
+<script>
+document.getElementById('surveyForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const status = document.getElementById('status');
+  btn.disabled = true;
+  status.textContent = 'Submitting...';
+  status.style.color = '#7a6a55';
+
+  const form = e.target;
+  const data = new FormData(form);
+  const payload = {};
+  for (const key of form.querySelectorAll('[name]')) {
+    const name = key.name;
+    if (payload[name] !== undefined) continue;
+    if (key.type === 'checkbox') {
+      payload[name] = Array.from(form.querySelectorAll(`[name="${name}"]:checked`)).map(el => el.value);
+    } else if (key.type === 'radio') {
+      const checked = form.querySelector(`[name="${name}"]:checked`);
+      payload[name] = checked ? checked.value : '';
+    } else {
+      payload[name] = key.value;
+    }
+  }
+  payload.submittedAt = new Date().toISOString();
+
+  try {
+    const res = await fetch('/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (!res.ok) throw new Error('Submit failed');
+    document.getElementById('surveyForm').style.display = 'none';
+    document.getElementById('thankyou').style.display = 'block';
+  } catch (err) {
+    status.textContent = 'Something went wrong. Please try again.';
+    status.style.color = '#7a1f1f';
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
